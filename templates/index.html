@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% if error %}
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>ERROR:</strong>
+            <p>
+                Only positive numbers or valid roman strings can be converted.
+            </p>
+        </div>
+        {% else %}
+        <div class="jumbotron">
+            <h1 class="text-center">{{roma.number}} - {{roma.roman}}</h1>
+            <p class="text-center"><a class="btn btn-primary btn-lg" href="https://en.wikipedia.org/wiki/Roman_numerals" target="_blank" role="button">Read more about roman numbers</a></p>
+        </div>
+        {% endif %}
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-2">
+            <p>
+                Add here the number or roman numiercal to convert.
+            </p>
+        </div>
+        <div class="col-md-12">
+            <form role="form" class="form-horizontal" method="post">
+                <div class="form-group">
+                    <label for="q" class="col-sm-2 control-label">Romans/Numbers</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="q" id="q">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10 col-sm-offset-2">
+                        <button class="btn btn-lg btn-success" type="submit">Convert</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

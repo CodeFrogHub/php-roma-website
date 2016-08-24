@@ -1,5 +1,8 @@
 vendor/
 build/
+/logs/*
+!/logs/README.md
+.tmp
 
 # Editor files
 .idea
